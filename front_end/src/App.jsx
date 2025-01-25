@@ -25,6 +25,10 @@ function App() {
     <>
       <Header />
       <ProductsDisplay products={productCollection} />
+      <div className="mainDisplay">
+        <div className="leftDisplay"></div>
+        <div className="rightDisplay"></div>
+      </div>
     </>
   );
 }
