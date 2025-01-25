@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import Header from "./Header";
+import ProductsDisplay from "./ProductsDisplay";
 function App() {
   // const [productCollection, setProductCollection] = useState([]);
 
@@ -16,20 +17,14 @@ function App() {
     checkedOut: false,
   };
 
-  const productCollection = [
-    product1,
-    product1,
-    product1,
-    product1,
-    product1,
-    product1,
-  ];
+  const productCollection = [product1];
 
   console.log(productCollection);
 
   return (
     <>
       <Header />
+      <ProductsDisplay products={productCollection} />
     </>
   );
 }
