@@ -24,10 +24,12 @@ function App() {
   return (
     <>
       <Header />
-      <ProductsDisplay products={productCollection} />
+
       <div className="mainDisplay">
         <div className="leftDisplay"></div>
-        <div className="rightDisplay"></div>
+        <div className="rightDisplay">
+          <ProductsDisplay products={productCollection} />
+        </div>
       </div>
     </>
   );

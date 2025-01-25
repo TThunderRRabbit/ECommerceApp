@@ -62,3 +62,16 @@
   display: flex;
   gap: 0.5rem;
 }
+
+.mainDisplay {
+  display: flex;
+  height: 100vh;
+}
+
+.leftDisplay {
+  flex: 1;
+}
+
+.rightDisplay {
+  flex: 3;
+}
