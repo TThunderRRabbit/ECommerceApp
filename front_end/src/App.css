@@ -1,7 +1,56 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Symbols+Rounded");
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
 .header {
   display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.25);
+  width: 100%;
+  padding: 1.7rem 3rem;
 }
 
 .search {
   display: flex;
+}
+
+.icon {
+  color: black;
+  padding: 0.3rem;
+}
+
+.icon-padding {
+  border: 1px solid rgba(18, 18, 18, 0.2);
+  box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.searchInput {
+  border-radius: 10px;
+  border: 1px solid rgba(18, 18, 18, 0.2);
+  box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.25);
+  width: 15rem;
+}
+
+.searchInput:focus {
+  outline: none;
+}
+
+.splitHeader {
+  display: flex;
+  gap: 1rem;
+}
+
+.forum,
+.cart {
+  color: #323232;
+}
+
+.search {
+  display: flex;
+  gap: 0.5rem;
 }
