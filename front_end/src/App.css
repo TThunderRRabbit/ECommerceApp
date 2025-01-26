@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Symbols+Rounded");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
 
 :root {
   --black: black;
@@ -11,6 +12,7 @@
   box-sizing: border-box;
   margin: 0px;
   padding: 0px;
+  font-family: "Inter", sans-serif;
 }
 
 .header {
@@ -44,6 +46,10 @@
   width: 15rem;
 }
 
+p {
+  display: inline;
+}
+
 .searchInput:focus {
   outline: none;
 }
@@ -74,4 +80,52 @@
 
 .rightDisplay {
   flex: 3;
+}
+
+.dealCardTitle {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.percent {
+  font-size: 1.5rem;
+}
+
+.dealCardDescription {
+  color: #525252;
+  font-size: 0.8rem;
+}
+
+.shopNow {
+  background-color: black;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  width: fit-content;
+}
+
+.dealCard {
+  background-color: #dbdada;
+  display: flex;
+  flex-direction: column;
+  gap: 1.7rem;
+  padding: 1rem;
+  position: relative;
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+
+.dealDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.nikePhoto {
+  position: absolute;
+  height: auto;
+  width: 16vw;
+  bottom: -15%;
+  right: 40%;
+  left: 30%;
 }

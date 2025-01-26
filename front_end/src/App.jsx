@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import Header from "./Header";
+import Deals from "./Deals";
 import ProductsDisplay from "./ProductsDisplay";
 function App() {
   // const [productCollection, setProductCollection] = useState([]);
@@ -26,7 +27,9 @@ function App() {
       <Header />
 
       <div className="mainDisplay">
-        <div className="leftDisplay"></div>
+        <div className="leftDisplay">
+          <Deals />
+        </div>
         <div className="rightDisplay">
           <ProductsDisplay products={productCollection} />
         </div>
