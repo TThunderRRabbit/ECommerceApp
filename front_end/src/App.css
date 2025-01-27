@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Symbols+Rounded");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined");
-@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_back_ios");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_back_ios,arrow_forward_ios,");
 
 root {
   --black: black;
@@ -137,8 +137,8 @@ p {
 
 .circle {
   background-color: black;
-  height: 0.54rem;
-  width: 0.43rem;
+  height: 0.57rem;
+  width: 0.5rem;
   border-radius: 50%;
 
   display: inline-block;
@@ -146,15 +146,19 @@ p {
 
 .circleGroup {
   display: flex;
-  gap: 5px;
+  gap: 0.5rem;
 }
 
 .dealNavigation {
+  align-self: center;
   display: flex;
   align-items: center;
+  justify-content: center;
+  margin-top: 1.3rem;
 }
 
 .arrow {
   font-size: 1.1rem;
   margin: 0px 1rem;
+  font-variation-settings: "FILL" 1, "wght" 900, "GRAD" 0, "opsz" 100;
 }
