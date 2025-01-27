@@ -14,6 +14,15 @@ export default function Deals() {
 
         <img src={nikePhoto1} className="nikePhoto" />
       </div>
+      <div className="dealNavigation">
+        <span class="material-symbols-outlined arrow">arrow_back_ios_new</span>
+        <p className="circleGroup">
+          <span className="circle"></span>
+          <span className="circle"></span>
+          <span className="circle"></span>
+        </p>
+        <span class="material-symbols-outlined arrow">arrow_forward_ios</span>
+      </div>
     </>
   );
 }
