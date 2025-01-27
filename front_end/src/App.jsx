@@ -31,7 +31,7 @@ function App() {
           <Deals />
         </div>
         <div className="rightDisplay">
-          <ProductsDisplay products={productCollection} />
+          {/* <ProductsDisplay products={productCollection} /> */}
         </div>
       </div>
     </>
