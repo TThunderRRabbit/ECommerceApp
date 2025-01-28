@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./Header";
 import Deals from "./Deals";
 import ProductsDisplay from "./ProductsDisplay";
+import ContactLogos from "./ContactLogos";
 function App() {
   // const [productCollection, setProductCollection] = useState([]);
 
@@ -29,6 +30,7 @@ function App() {
       <div className="mainDisplay">
         <div className="leftDisplay">
           <Deals />
+          <ContactLogos />
         </div>
         <div className="rightDisplay">
           {/* <ProductsDisplay products={productCollection} /> */}

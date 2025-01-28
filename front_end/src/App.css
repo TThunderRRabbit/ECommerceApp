@@ -73,7 +73,6 @@ p {
 
 .mainDisplay {
   display: flex;
-  height: 100vh;
 }
 
 .leftDisplay {
@@ -114,12 +113,15 @@ p {
   gap: 1.7rem;
   padding: 2rem 2rem 2rem 2rem;
   position: relative;
-  margin-left: 1rem;
   margin-top: 2rem;
   border: 2px solid rgb(189, 188, 188);
   box-shadow: 0px 4px 4px 0px var(--boxShadow);
   border-radius: 70px;
   z-index: 1;
+}
+
+.leftDisplay {
+  padding-left: 1rem;
 }
 
 .dealDetails {
@@ -162,4 +164,9 @@ p {
   font-size: 1.1rem;
   margin: 0px 1rem;
   font-variation-settings: "FILL" 1, "wght" 900, "GRAD" 0, "opsz" 100;
+}
+
+.contactLogos {
+  margin-left: 1rem;
+  margin-top: 12rem;
 }
