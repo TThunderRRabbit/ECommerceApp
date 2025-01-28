@@ -211,3 +211,14 @@ p {
   border-radius: 28.5px;
   color: white;
 }
+
+.productsCollection {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+}
+
+.productImage {
+  width: 60%;
+  height: auto;
+}
