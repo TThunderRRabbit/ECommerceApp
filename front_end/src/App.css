@@ -121,7 +121,6 @@ p {
   z-index: 1;
   overflow: hidden;
 }
-
 .leftDisplay {
   padding-left: 1rem;
 }
@@ -217,6 +216,18 @@ p {
   grid-template-columns: repeat(3, 1fr);
   column-gap: 1rem;
   row-gap: 1rem;
+  max-height: 30.5rem;
+  overflow-y: auto;
+  padding-right: 1rem;
+}
+
+.productsCollection::-webkit-scrollbar {
+  width: 8px;
+}
+
+.productsCollection::-webkit-scrollbar-thumb {
+  background-color: black;
+  border-radius: 60px;
 }
 
 .productImage {
