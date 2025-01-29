@@ -220,7 +220,7 @@ p {
 }
 
 .productImage {
-  width: 13rem;
+  width: 14rem;
   height: 10rem;
   object-fit: contain;
 }
@@ -231,4 +231,32 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 0.6rem 2.1rem 1.4rem 2.1rem;
+  border: 1px solid rgb(189, 188, 188);
+  box-shadow: 0px 4px 4px 0px var(--boxShadow);
+  border-radius: 70px;
+}
+
+.productDetails {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.productName {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.productPrice {
+  font-size: 0.9rem;
+}
+
+.statusIcon {
+  transform: scale(0.9);
+}
+
+.productStatus {
+  display: flex;
+  gap: 0.3rem;
 }
