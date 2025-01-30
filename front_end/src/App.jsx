@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import Header from "./Header";
 import Deals from "./Deals";
@@ -12,19 +12,20 @@ import prImg4 from "./nikePhotos/product4.png";
 import prImg5 from "./nikePhotos/product5.png";
 
 function App() {
-  // const [productCollection, setProductCollection] = useState([]);
+  // const [allProducts, setProductCollection] = useState([]);
 
   // const addProduct = (product) => {
-  //   setProductCollection([...productCollection, product]);
-  //   console.log(productCollection);
+  //   setProductCollection([...allProducts, product]);
+  //   console.log(allProducts);
   // };
-
+  const [view, setView] = useState("All");
   const product1 = {
     name: "Air Max 97",
     price: 20.99,
     inCart: false,
     checkedOut: false,
     img: prImg1,
+    category: ["Sneakers", "Clothes"],
   };
 
   const product2 = {
@@ -33,6 +34,7 @@ function App() {
     inCart: false,
     checkedOut: false,
     img: prImg5,
+    category: ["Clothes"],
   };
 
   const product3 = {
@@ -41,6 +43,7 @@ function App() {
     inCart: false,
     checkedOut: false,
     img: prImg3,
+    category: ["Clothes", "Mens"],
   };
 
   const product4 = {
@@ -49,6 +52,7 @@ function App() {
     inCart: false,
     checkedOut: false,
     img: prImg4,
+    category: ["Kids"],
   };
 
   const product5 = {
@@ -57,6 +61,7 @@ function App() {
     inCart: false,
     checkedOut: false,
     img: prImg5,
+    category: ["Kids"],
   };
 
   const product6 = {
@@ -65,9 +70,10 @@ function App() {
     inCart: false,
     checkedOut: false,
     img: prImg1,
+    category: ["Kids"],
   };
 
-  const productCollection = [
+  const allProducts = [
     product1,
     product2,
     product3,
@@ -88,7 +94,24 @@ function App() {
     product6,
   ];
 
-  console.log(productCollection);
+  const [productsInView, setProductsInView] = useState(allProducts);
+
+  const mensList = allProducts.filter((product) =>
+    product.category.includes("Mens")
+  );
+
+  useEffect(() => {
+    console.log(view);
+    console.group(mensList);
+  }, [view]);
+
+  useEffect(() => {
+    if (view === "Mens") {
+      setProductsInView(mensList);
+    } else if (view === "All") {
+      setProductsInView(allProducts);
+    }
+  }, [view]);
 
   return (
     <>
@@ -100,8 +123,8 @@ function App() {
           <ContactLogos />
         </div>
         <div className="rightDisplay">
-          <Categories />
-          <ProductsDisplay products={productCollection} />
+          <Categories view={view} setView={setView} />
+          <ProductsDisplay products={productsInView} />
         </div>
       </div>
     </>
