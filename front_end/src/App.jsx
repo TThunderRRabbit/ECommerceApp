@@ -110,28 +110,32 @@ function App() {
   const [cart, setCart] = useState([]);
 
   const toggleCart = (id) => {
-    let inCart = false;
+    let updatedCart = [...cart]; // Copy the current cart to avoid mutation
 
-    for (let i = 0; i < cart.length; i++) {
-      if (cart[i].id == id) {
-        cart.splice(i, 1);
-        inCart = true;
+    let isInCart = false;
+
+    // Using a for loop to check if the product is already in the cart
+    for (let i = 0; i < updatedCart.length; i++) {
+      if (updatedCart[i].id === id) {
+        updatedCart.splice(i, 1); // Remove the item by creating a new array
+        isInCart = true;
         break;
       }
     }
 
-    if (inCart == false) {
-      // getTheItem
+    if (!isInCart) {
+      // If the product wasn't in the cart, find and add it to the new array
       for (let i = 0; i < productsInView.length; i++) {
-        if (productsInView[i].id == id) {
-          let product = productsInView[i];
-          setCart([...cart, product]);
+        if (productsInView[i].id === id) {
+          updatedCart.push(productsInView[i]);
           break;
         }
       }
     }
-  };
 
+    // Set the new cart state (React will trigger a re-render)
+    setCart(updatedCart);
+  };
   const displayCart = () => {
     console.log(cart);
   };
@@ -155,10 +159,11 @@ function App() {
             <ContactLogos />
           </div>
           <div className="rightDisplay">
-            <Categories view={view} setView={setView} cart={cart} />
+            <Categories view={view} setView={setView} />
             <ProductsDisplay
               products={productsInView}
               toggleCart={toggleCart}
+              cart={cart}
             />
           </div>
         </div>

@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-export default function ProductsDisplay({ products, toggleCart, cart = [] }) {
+export default function ProductsDisplay({ products, toggleCart, cart }) {
   return (
     <>
       <div className="productsCollection">
@@ -63,6 +63,7 @@ export default function ProductsDisplay({ products, toggleCart, cart = [] }) {
                         viewBox="0 0 37 33"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
+                        onClick={() => toggleCart(product.id)}
                       >
                         <rect width="37" height="33" rx="12" fill="white" />
                         <rect
