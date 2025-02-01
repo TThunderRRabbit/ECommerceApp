@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ProductsDisplay({ products }) {
+export default function ProductsDisplay({ products, addToCart }) {
   return (
     <>
       <div className="productsCollection">
@@ -16,6 +16,7 @@ export default function ProductsDisplay({ products }) {
               <div className="productStatus">
                 <div className="statusIcon">
                   <svg
+                    onClick={() => addToCart(index)}
                     width="37"
                     height="33"
                     viewBox="0 0 37 33"

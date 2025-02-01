@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Header() {
+export default function Header({ displayCart }) {
   return (
     <>
       <div className="header">
@@ -14,7 +14,7 @@ export default function Header() {
             </div>
             <input className="searchInput"></input>
           </div>
-          <div className="cart">
+          <div className="cart" onClick={displayCart}>
             <span class="material-symbols-rounded cart icon">
               shopping_cart
             </span>

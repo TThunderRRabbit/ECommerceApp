@@ -100,10 +100,16 @@ function App() {
     product.category.includes("Mens")
   );
 
-  useEffect(() => {
-    console.log(view);
-    console.group(mensList);
-  }, [view]);
+  const [indexOfCart, setIndexOfCart] = useState([]);
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (index) => {
+    setCart([...cart, productsInView[index]]);
+  };
+
+  const displayCart = () => {
+    console.log(cart);
+  };
 
   useEffect(() => {
     if (view === "Mens") {
@@ -115,7 +121,7 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header displayCart={displayCart} />
 
       <div className="mainDisplay">
         <div className="leftDisplay">
@@ -124,7 +130,7 @@ function App() {
         </div>
         <div className="rightDisplay">
           <Categories view={view} setView={setView} />
-          <ProductsDisplay products={productsInView} />
+          <ProductsDisplay products={productsInView} addToCart={addToCart} />
         </div>
       </div>
     </>
