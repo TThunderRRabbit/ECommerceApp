@@ -11,25 +11,25 @@ export default function Categories({ view, setView }) {
           All
         </span>
         <span
-          className={`categoryIcon ${view === "Sneakers" ? "all" : ""}`} 
+          className={`categoryIcon ${view === "Sneakers" ? "all" : ""}`}
           onClick={() => setView("Sneakers")}
         >
           Sneakers
         </span>
         <span
-          className={`categoryIcon ${view === "Clothes" ? "all" : ""}`} 
+          className={`categoryIcon ${view === "Clothes" ? "all" : ""}`}
           onClick={() => setView("Clothes")}
         >
           Clothes
         </span>
         <span
-          className={`categoryIcon ${view === "Mens" ? "all" : ""}`} 
+          className={`categoryIcon ${view === "Mens" ? "all" : ""}`}
           onClick={() => setView("Mens")}
         >
           Mens
         </span>
         <span
-          className={`categoryIcon ${view === "Kids" ? "all" : ""}`} 
+          className={`categoryIcon ${view === "Kids" ? "all" : ""}`}
           onClick={() => setView("Kids")}
         >
           Kids

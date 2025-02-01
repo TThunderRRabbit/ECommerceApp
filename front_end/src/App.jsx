@@ -26,6 +26,7 @@ function App() {
     checkedOut: false,
     img: prImg1,
     category: ["Sneakers", "Clothes"],
+    id: 1,
   };
 
   const product2 = {
@@ -35,6 +36,7 @@ function App() {
     checkedOut: false,
     img: prImg5,
     category: ["Clothes"],
+    id: 2,
   };
 
   const product3 = {
@@ -44,6 +46,7 @@ function App() {
     checkedOut: false,
     img: prImg3,
     category: ["Clothes", "Mens"],
+    id: 3,
   };
 
   const product4 = {
@@ -53,6 +56,7 @@ function App() {
     checkedOut: false,
     img: prImg4,
     category: ["Kids"],
+    id: 4,
   };
 
   const product5 = {
@@ -62,6 +66,7 @@ function App() {
     checkedOut: false,
     img: prImg5,
     category: ["Kids"],
+    id: 5,
   };
 
   const product6 = {
@@ -71,6 +76,7 @@ function App() {
     checkedOut: false,
     img: prImg1,
     category: ["Kids"],
+    id: 6,
   };
 
   const allProducts = [
@@ -103,8 +109,27 @@ function App() {
   const [indexOfCart, setIndexOfCart] = useState([]);
   const [cart, setCart] = useState([]);
 
-  const addToCart = (index) => {
-    setCart([...cart, productsInView[index]]);
+  const toggleCart = (id) => {
+    let inCart = false;
+
+    for (let i = 0; i < cart.length; i++) {
+      if (cart[i].id == id) {
+        cart.splice(i, 1);
+        inCart = true;
+        break;
+      }
+    }
+
+    if (inCart == false) {
+      // getTheItem
+      for (let i = 0; i < productsInView.length; i++) {
+        if (productsInView[i].id == id) {
+          let product = productsInView[i];
+          setCart([...cart, product]);
+          break;
+        }
+      }
+    }
   };
 
   const displayCart = () => {
@@ -121,16 +146,21 @@ function App() {
 
   return (
     <>
-      <Header displayCart={displayCart} />
+      <div className="content">
+        <Header displayCart={displayCart} />
 
-      <div className="mainDisplay">
-        <div className="leftDisplay">
-          <Deals />
-          <ContactLogos />
-        </div>
-        <div className="rightDisplay">
-          <Categories view={view} setView={setView} />
-          <ProductsDisplay products={productsInView} addToCart={addToCart} />
+        <div className="mainDisplay">
+          <div className="leftDisplay">
+            <Deals />
+            <ContactLogos />
+          </div>
+          <div className="rightDisplay">
+            <Categories view={view} setView={setView} cart={cart} />
+            <ProductsDisplay
+              products={productsInView}
+              toggleCart={toggleCart}
+            />
+          </div>
         </div>
       </div>
     </>

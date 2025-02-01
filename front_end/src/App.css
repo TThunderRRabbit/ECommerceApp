@@ -73,6 +73,12 @@ p {
 
 .mainDisplay {
   display: flex;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
 }
 
 .leftDisplay {
