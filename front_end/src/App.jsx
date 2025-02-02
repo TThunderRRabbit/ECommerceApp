@@ -167,6 +167,11 @@ function App() {
     }
   };
 
+  const [viewProduct, setViewProduct] = useState(false);
+
+  const handleViewProduct = () => {
+    setViewProduct(!viewProduct);
+  };
   return (
     <>
       <div className="content">
@@ -179,18 +184,28 @@ function App() {
         />
 
         <div className="mainDisplay">
-          <div className="leftDisplay">
-            <Deals />
-            <ContactLogos />
-          </div>
-          <div className="rightDisplay">
-            <Categories view={view} setView={setView} />
-            <ProductsDisplay
-              products={productsInView}
-              toggleCart={toggleCart}
-              cart={cart}
-            />
-          </div>
+          {viewProduct == false && (
+            <>
+              <div className="leftDisplay">
+                <Deals />
+                <ContactLogos />
+              </div>
+              <div className="rightDisplay">
+                <Categories view={view} setView={setView} />
+                <ProductsDisplay
+                  products={productsInView}
+                  toggleCart={toggleCart}
+                  cart={cart}
+                  handleViewProduct={handleViewProduct}
+                />
+              </div>{" "}
+            </>
+          )}
+          {viewProduct == true && (
+            <>
+              <div className="lol">lol</div>
+            </>
+          )}
         </div>
       </div>
     </>

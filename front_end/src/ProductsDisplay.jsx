@@ -1,6 +1,9 @@
-import React, { useEffect } from "react";
-
-export default function ProductsDisplay({ products, toggleCart, cart }) {
+export default function ProductsDisplay({
+  products,
+  toggleCart,
+  cart,
+  handleViewProduct,
+}) {
   return (
     <>
       <div className="productsCollection">
@@ -97,6 +100,7 @@ export default function ProductsDisplay({ products, toggleCart, cart }) {
                   </div>
                   <div className="statusIcon">
                     <svg
+                      onClick={() => handleViewProduct(product)}
                       width="37"
                       height="33"
                       viewBox="0 0 37 33"
