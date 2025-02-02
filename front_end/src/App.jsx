@@ -110,21 +110,19 @@ function App() {
   const [cart, setCart] = useState([]);
 
   const toggleCart = (id) => {
-    let updatedCart = [...cart]; // Copy the current cart to avoid mutation
+    let updatedCart = [...cart];
 
     let isInCart = false;
 
-    // Using a for loop to check if the product is already in the cart
     for (let i = 0; i < updatedCart.length; i++) {
       if (updatedCart[i].id === id) {
-        updatedCart.splice(i, 1); // Remove the item by creating a new array
+        updatedCart.splice(i, 1);
         isInCart = true;
         break;
       }
     }
 
     if (!isInCart) {
-      // If the product wasn't in the cart, find and add it to the new array
       for (let i = 0; i < productsInView.length; i++) {
         if (productsInView[i].id === id) {
           updatedCart.push(productsInView[i]);
@@ -133,7 +131,6 @@ function App() {
       }
     }
 
-    // Set the new cart state (React will trigger a re-render)
     setCart(updatedCart);
   };
   const displayCart = () => {
@@ -148,10 +145,38 @@ function App() {
     }
   }, [view]);
 
+  const [inputValue, setInputValue] = useState("");
+
+  const handleChange = (e) => {
+    setInputValue(e.target.value);
+  };
+
+  const handleSearch = (inputValue) => {
+    let found = false;
+
+    for (let i = 0; i < allProducts.length; i++) {
+      if (inputValue == allProducts[i].name) {
+        console.log(allProducts[i]);
+        found = true;
+        break;
+      }
+    }
+
+    if (found == false) {
+      console.log("Product not in the collection");
+    }
+  };
+
   return (
     <>
       <div className="content">
-        <Header displayCart={displayCart} />
+        <Header
+          displayCart={displayCart}
+          inputValue={inputValue}
+          handleChange={handleChange}
+          const
+          handleSearch={handleSearch}
+        />
 
         <div className="mainDisplay">
           <div className="leftDisplay">

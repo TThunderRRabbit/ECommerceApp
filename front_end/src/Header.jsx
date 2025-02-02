@@ -1,6 +1,11 @@
 import React from "react";
 
-export default function Header({ displayCart }) {
+export default function Header({
+  displayCart,
+  inputValue,
+  handleChange,
+  handleSearch,
+}) {
   return (
     <>
       <div className="header">
@@ -10,9 +15,18 @@ export default function Header({ displayCart }) {
         <div className="splitHeader">
           <div className="search">
             <div className="div icon-padding">
-              <span class="material-symbols-rounded search icon">search</span>
+              <span
+                class="material-symbols-rounded search icon"
+                onClick={() => handleSearch(inputValue)}
+              >
+                search
+              </span>
             </div>
-            <input className="searchInput"></input>
+            <input
+              className="searchInput"
+              value={inputValue}
+              onChange={handleChange}
+            ></input>
           </div>
           <div className="cart" onClick={displayCart}>
             <span class="material-symbols-rounded cart icon">
